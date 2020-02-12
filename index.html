@@ -40,12 +40,34 @@
 
 <!-- Video text --> 
 	<div class="Video_Text"> 
-		<h1 style="color:white;">Hobbs<span class="span">D</span>ev</h1>
-		<p>Hi, I am Brian. <br> 
+		<h1 class="fade">Hobbs<span class="span">D</span>ev</h1>
+		<p class="fade">Hi, I am Brian. <br> 
         Welcome to HobbsDev. I'm A Full-Stack Software Developer specilizing in anything Python! From Django to Tkinter, SQL to API's, I love it all!</p>
         
-        <a href="#About">Learn More</a>	
+        <a href="#About" class="fade">Learn More</a>
+		<a class="open-button fade" onclick="openForm()">Contact</a>
+		
+
 	</div>
+
+<!-- Popup contact form-->
+<div class="form-popup" id="myForm">
+  <form  class="form-container">
+    <h1>Contact</h1>
+
+    <label for="email"><b>Email</b></label>
+	<input type="text" placeholder="Enter Name" name="name-one" required>
+    <input type="text" placeholder="Enter Email" name="email-one" required>
+	<input type="text" placeholder="Enter Message" name="message-one" required>
+
+   
+
+    <button type="submit" class="btn">Contact Us</button>
+    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<!--- End popup contact form-->
 
 <!-- About section -->
 	<div class="Row" id="About"> 
@@ -62,7 +84,7 @@
 		</div>
   
 		<div class="Column_1"> <!-- Right column -->
-			<h1>About</h2>
+			<h1 class="bouncy">About</h2>
 				<p>I am a software developer who loves to code! As a father of one, I enjoy time with my family and enjoying the outdoors. <br><br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, Python and more. I also have a B.A. in Psychology, from University Of Massachuessets. <br><br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!</p>
 		</div>
 	</div>
@@ -70,13 +92,13 @@
 <!-- GitHub section -->
 	<div class="Row" id="GitHub">
 		<div class="Column_1"> <!-- Left column -->
-			<h1>GitHub</h1>
+			<h1 class="bouncy">GitHub</h1>
 				<p>If you are interested in seeing some of my work or are just curious what I may be working on these days. Stop by and take a look around. If you'd like to start a project with me, reach out and say hi!<br>
 				<center><a href="https://github.com/bhobbs20" target="_blank">HobbsDev Github</a></center></p>
 		</div>
 		
 		<div class="Column_2"> <!-- Right column -->
-			<a href="https://github.com/bhobbs20" target="_blank"><img src="./Images/github-2.jpeg" alt="GitHub"></a>
+			<a href="https://github.com/bhobbs20" target="_blank"><img src="./Images/github-2.jpeg" alt="GitHub" class="zoom-zoom-zoom"></a>
 		</div>
 	</div>
 
@@ -87,17 +109,38 @@
 		</div>
 	
 		<div class="Column_1"> <!-- Contact form, right "column" -->
-			<h1>Contact</h2> 
-				<form action="" method="get"> <!-- This specifies where to send the form data and how; it is left blank -->
-					
-						<input type="text" placeholder="Name">
-						<input type="text" id="Email" name="Email" placeholder="Email">
-                        <input type="text" id="Number" name="Number" placeholder="Number">
-					    <input type="text" id="Message" name="Message" placeholder="Message">
-						<input type="submit" value="Submit">
+			<h1 class="bouncy">Contact</h2> 
+				<form id="contact" onsubmit="return validateForm()"> <!-- This specifies where to send the form data and how; it is left blank -->
+					<input type="text" name="fullname" value="" placeholder="Enter Name" ><br>
+					<input type="text" name="email" value="" placeholder="Enter Email" ><br>
+					<input type="text" name="number" value="" placeholder="Enter number" ><br>
+                	<input type="text" name="message" value="" placeholder="Enter Message">
+					<input type="submit" value="Submit">
 				</form>
 		</div>
 	</div>
+
+	<!-- slide show--> 
+	<div class="container">
+	<h2 class="slid-show-title"> Things I love</h2>
+		<div id="slideshow">
+   			<div>
+     			<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
+   			</div>
+   			<div>
+     			<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Capitals-Maple_Leafs_%2834075134291%29.jpg" alt ="">
+   			</div>
+			   <div>
+     			<img src="https://oceanvodka.com/uploads/2019/04/HP-Hero-Header@2x-1024x570.jpg" alt="">
+   			</div>
+   		
+		</div>
+	</div>
+	
+
+	<button class="sticky-btn" onclick="openForm()">Contact</button>
+
+
 	
 <!-- Footer section -->
 	<footer>
@@ -106,6 +149,12 @@
 		</p>
 	</footer>
 
-		</body>
+
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="./js/index.js"></script>
+		 
+	</body>
 
 </html>

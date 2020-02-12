@@ -1,8 +1,14 @@
+html {
+	scroll-behavior: smooth;
+  }
+
 /* Body */
+
 body {
 	margin: 0%;
 	font-family: 'Montserrat', sans-serif; 
 }
+
 
 /* Navbar */
 .navbar {
@@ -79,12 +85,17 @@ body {
 	margin-top: 20px;
 }
 
+
 .Video_Text h1 {
-	font-size: 40px;
+
+	font-size: 5vw;
 	font-weight: 600;
 	letter-spacing: .10rem;
 	margin-top: 125px;
+	color: #fff;
 }
+
+
 
 .Video_Text p {
 	line-height: 1.5;
@@ -96,6 +107,7 @@ body {
 	color: #fff;
 	text-shadow: 1px 1px black;
 	font-size: 45px;
+	font-size: 6vw;
 }
 
 .Video_Text a {
@@ -113,6 +125,24 @@ body {
 
 .Video_Text a:hover {
 	color: #2b3654fa;
+}
+
+.open-button {
+	
+	height: 250px;
+	background-color: #2b3654fa !important;
+	padding: 10px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #fff;
+	margin-left: 20px;
+	font-weight: 700;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.open-button:hover {
+	color: #fff !important;
+	background-color: #c3c5d3 !important;
 }
 /* Table - this section covers the styling of the columns and rows within our table */
 * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
@@ -280,6 +310,19 @@ input[type=text] { /* This covers the input sections of the contact form */
     font-family: Perpetua, Rockwell Extra Bold; 
 }
 
+input[type=email] { /* This covers the input sections of the contact form */
+	width: 100%;
+	padding: 12px;
+    border: 1px solid #ccc; /* We are setting a solid border and its colors */
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical; /* This specifies how an element is resized; vertical allows the user to resize the height of the element */
+    font-family: Perpetua, Rockwell Extra Bold; 
+}
+
+
 /* Submit button */
 input[type=submit] { /* This covers the submit button for the contact form */
 	background-color: #2b3654fa;
@@ -312,31 +355,61 @@ form {
 	font-family: "Trebuchet MS", Optima;
 }
 
-/* Center align element hover effect */
-/* center:hover {
-	transition: transform 2s;
-	transform: scale(1.1);
-} */
+/*** Popup Form ****/
 
-/* Paragraph element hover effect */
-/* p:hover {
-	color: #00004d;	
-    transition: transform 1s;
-	transform: scale(1.01);
-} */
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	border: none;
+	background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+	background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+	opacity: 1;
+  }
 
-/* Heading 1 element hover effect */
-/* h1:hover {
-	color: black;
-	font-weight: normal; /* Makes the text no longer bold when hovered over 
-} */
-
-/* Image element hover effects */
-/* img:hover {
-	filter: grayscale(5%);  /* Brings back most of the image's color when hovered over 
-    transition: transform 1s;
-	transform: scale(1.1);
-} */
 
 /* Footer element */
 footer {
@@ -354,3 +427,85 @@ footer a:hover {
 	color: #c3c5d3;
 	text-decoration: none;
 }
+
+@keyframes bounceIn {
+	0% {
+	  transform: scale(0.1);
+	  opacity: 0;
+	}
+	60% {
+	  transform: scale(1.2);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+
+  .bouncy {
+	animation: bounceIn 2s;
+  }
+
+  @keyframes zooming {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.zoom-zoom-zoom:hover {
+	animation: zooming 15s forwards;
+}
+
+#slideshow {
+	margin: 40px auto;
+	position: relative;
+	width: 60%;
+	height: 400px;
+	padding: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+  
+ #slideshow > div {
+	/* position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px; */
+	width: 100;
+	height: 100%;
+}  
+
+#slideshow img {
+	height: 100%;
+	width: 100%;
+}
+
+.slid-show-title {
+	color: #fff;
+	font-weight: 700;
+	text-align: center; 
+}
+
+
+
+.sticky-btn {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	background-color: #2b3654fa; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 10px;
+	text-decoration: none;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	font-size: 16px;
+	border-radius: 40%;
+  }
