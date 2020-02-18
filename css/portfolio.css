@@ -509,3 +509,61 @@ footer a:hover {
 	font-size: 16px;
 	border-radius: 40%;
   }
+
+.column  {
+	float: left;
+	width: 33.33%;
+	padding: 10px;
+	margin-bottom: 50px;
+}
+  
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.portfolio {
+	background-color: #fff;
+}
+
+.portfolio h2 {
+	text-align: center;
+	text-transform: uppercase; /* We are capitalizing our headings */
+	font-family: "Trebuchet MS", Optima; 
+	margin-top: 3%; /* We are adding a small margin above the headings */
+	color: #4b587bfa;
+	padding-top: 30px;
+}
+
+.portfolio img {
+	height: 100%;
+	width: 100%;
+}
+
+.portfolio-box {
+	position: relative;
+	height: 300px;
+	align-items: center;
+  
+}
+
+.portfolio-box:hover .portfolio-image {
+	opacity: 0.3;
+}
+.portfolio-box:hover .port-overlay {
+	opacity: 1;
+}
+
+.port-overlay {
+	transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
